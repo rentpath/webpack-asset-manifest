@@ -1,0 +1,18 @@
+{
+  "name": "webpack-asset-manifest",
+  "version": "0.0.1",
+  "description": "Builds asset manifest of assets emitted from webpack.",
+  "main": "index.js",
+  "keywords": [
+    "webpack",
+    "asset",
+    "manifest"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hunter Haydel",
+  "license": "ISC",
+  "dependencies": {
+  }
+}
