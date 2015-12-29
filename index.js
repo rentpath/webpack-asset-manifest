@@ -13,7 +13,7 @@ AssetManifestPlugin.prototype.apply = function(compiler) {
       publicPath = compiler.options.output.publicPath;
 
   function publicRelative(url) {
-    return path.join(publicPath, url.replace(outputPath, ''));
+    return publicPath + url;
   }
 
   function keyForModule(module) {
