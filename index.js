@@ -1,23 +1,29 @@
 var path = require('path'),
     fs = require('fs');
 
-function AssetManifestPlugin(output) {
+function AssetManifestPlugin(output, assetRoot) {
   this.output = output;
+  this.assetRoot = assetRoot;
 }
 
 AssetManifestPlugin.prototype.apply = function(compiler) {
   var assets = {},
-      output  = this.output;
+      output  = this.output,
+      assetRoot = this.assetRoot;
 
-  var outputPath = compiler.options.output.path,
-      publicPath = compiler.options.output.publicPath;
+  var publicPath = compiler.options.output.publicPath;
 
   function publicRelative(url) {
     return publicPath + url;
   }
 
+  function removeAssetRoot(resource) {
+    var replaceRoot = new RegExp("^" + assetRoot + "(\/)?");
+    return resource.replace(replaceRoot, '');
+  }
+
   function keyForModule(module) {
-    return Object.keys(module.assets)[0];
+    return removeAssetRoot(module.resource);
   }
 
   compiler.plugin('compilation', function(compilation) {
