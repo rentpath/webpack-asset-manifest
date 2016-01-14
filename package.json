@@ -9,10 +9,17 @@
     "manifest"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha ./test",
+    "test-watch": "mocha ./test -w"
   },
   "author": "Hunter Haydel",
   "license": "ISC",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "file-loader": "^0.8.5",
+    "glob": "^6.0.4",
+    "mocha": "^2.3.4",
+    "webpack": "^1.12.11"
   }
 }
