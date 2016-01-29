@@ -22,3 +22,5 @@ images.forEach(function(image) {
   config.plugins.push(new webpack.PrefetchPlugin('./' + image));
 });
 ```
+# License
+[MIT](https://github.com/rentpath/webpack-asset-manifest/blob/master/LICENSE)
