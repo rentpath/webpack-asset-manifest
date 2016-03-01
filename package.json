@@ -1,6 +1,6 @@
 {
   "name": "webpack-asset-manifest",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Builds asset manifest of assets emitted from webpack.",
   "main": "index.js",
   "keywords": [
