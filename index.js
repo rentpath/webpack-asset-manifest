@@ -1,5 +1,6 @@
 var path = require('path'),
-    fs = require('fs');
+    fs = require('fs'),
+    mkdirp = require('mkdirp');
 
 function AssetManifestPlugin(output, assetRoot) {
   this.output = output;
@@ -33,6 +34,7 @@ AssetManifestPlugin.prototype.apply = function(compiler) {
   });
 
   compiler.plugin('done', function() {
+    mkdirp.sync(path.dirname(output));
     fs.writeFileSync(output, JSON.stringify(assets, null, 2));
   });
 };

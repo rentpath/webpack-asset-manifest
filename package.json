@@ -14,7 +14,9 @@
   },
   "author": "Hunter Haydel",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "mkdirp": "^0.5.1"
+  },
   "devDependencies": {
     "chai": "^3.4.1",
     "file-loader": "^0.8.5",
