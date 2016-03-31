@@ -1,6 +1,6 @@
 {
   "name": "webpack-asset-manifest",
-  "version": "0.0.4",
+  "version": "0.0.0-semantically-released",
   "description": "Builds asset manifest of assets emitted from webpack.",
   "main": "index.js",
   "keywords": [
@@ -10,7 +10,8 @@
   ],
   "scripts": {
     "test": "mocha ./test",
-    "test-watch": "mocha ./test -w"
+    "test-watch": "mocha ./test -w",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "author": "Hunter Haydel",
   "license": "ISC",
@@ -19,9 +20,21 @@
   },
   "devDependencies": {
     "chai": "^3.4.1",
+    "commitizen": "^2.3.0",
+    "cz-conventional-changelog": "^1.1.5",
     "file-loader": "^0.8.5",
     "glob": "^6.0.4",
     "mocha": "^2.3.4",
-    "webpack": "^1.12.11"
+    "webpack": "^1.12.11",
+    "semantic-release": "^4.3.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rentpath/webpack-asset-manifest.git"
   }
 }
